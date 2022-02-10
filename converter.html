@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>converter</title>
+
+<style>
+    .content{
+        content: '';
+        position: relative;
+        width: 300px;
+        height: 400px;
+        background-color: pink;
+        box-shadow: 1px 2px 5px rgb(127,127,127);
+        margin: left 10px;
+        transform: translateX(50%);
+    }
+</style>
+
+
+</head>
+        <body>
+
+          <div class="content">
+      <h2> convertion from decimal to binary octal hexadecimal</h2>
+             Decimal Value<input type="text" id="number1">
+             Octal Value <input type="text" id="number2">
+             <button id="sub" onclick="convert()">submit</button>
+            
+              <hr/>          
+        
+      Binary value : <input type="text" id="binary" placeholder="Binary value"><br>
+      Octal value: <input type="text" id="octal" placeholder="octal value"><br>          
+      Hexa decimal value: <input type="text" id="hexa" placeholder="Hexadecimal value"><br>
+
+</div> 
+ <script>
+     'use strict';
+     function convert(){
+var rem,binary=0,i=1;
+var deci = Number(document.getElementById("number1").value);
+while(deci > 0){
+    rem = deci%2;
+    deci = parseInt(deci/2);
+    binary = binary + (i*rem);
+    i = i*10;
+}
+document.getElementById("binary").value = binary;
+
+deciToOctal();
+deciToHexa();
+//octalTodeci();
+
+     }
+     function deciToOctal(){
+         var decOc = Number(document.getElementById("number1").value);
+
+         var octal = decOc.toString(8);         
+         
+        document.getElementById("octal").value = octal;
+        //document.getElementById("deci").value = deci;
+     }
+
+     function deciToHexa(){
+
+         var decHx = Number(document.getElementById("number1").value);
+
+         var hexa = decHx.toString(16);
+         document.getElementById("hexa").value = hexa;
+     }
+//function octalTodeci(){
+
+   // var oct = Number(document.getElementById("Octal").value);
+
+   // var 
+//}
+
+
+
+ </script>           
+            
+
+
+        </body>
+    
+</html>
